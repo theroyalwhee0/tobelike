@@ -6,8 +6,10 @@
  */
 
 module.exports = {
+
+
   // General.
-  "testMatch": [
+  testMatch: [
     "<rootDir>/build/test/**/*.test.js",
   ],
 
@@ -21,5 +23,5 @@ module.exports = {
     "<rootDir>/node_modules/",
     "<rootDir>/src/",
     "<rootDir>/test/",
-  ]
+  ],
 };

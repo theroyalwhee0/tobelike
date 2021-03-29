@@ -1,100 +1,24 @@
-import {
-  isObject, isFunction, isInteger, isBigInt,
-  isSymbol, isArray, isNumber, isString
-} from '@theroyalwhee0/istype';
-import { likeError, likePromise } from '@theroyalwhee0/liketype';
+/**
+ * @module @theroyalwhee0/tobelike
+ * @file toBeLike matcher for Jest.
+ * @version v0.0.2
+ * @author Adam Mill <hismajesty@theroyalwhee.com>
+ * @copyright Copyright 2021 Adam Mill
+ * @license Apache-2.0
+ */
 
-export enum Like {
-  array = 'array',
-  bigint = 'bigint',
-  boolean = 'boolean',
-  error = 'error',
-  integer = 'integer',
-  function = 'function',
-  null = 'null',
-  number = 'number',
-  object = 'object',
-  string = 'string',
-  symbol = 'symbol',
-  promise = 'promise',
-  undefined = 'undefined',
-}
+import { toBeLike } from './matchers';
 
-export function toBeLike(value: unknown, type: Like): {
-  pass: boolean, message: () => string;
-} {
-  if (typeof type !== 'string') {
-    throw new Error('expected "type" to be a string');
-  }
-  let matched = false;
-  switch (type) {
-    case Like.string: {
-      matched = isString(value);
-      break;
-    }
-    case Like.number: {
-
-      matched = isNumber(value);
-      break;
-    }
-    case Like.object: {
-      matched = isObject(value);
-      break;
-    }
-    case Like.array: {
-      matched = isArray(value);
-      break;
-    }
-    case Like.function: {
-      matched = isFunction(value);
-      break;
-    }
-    case Like.symbol: {
-      matched = isSymbol(value);
-      break;
-    }
-    case Like.bigint: {
-      matched = isBigInt(value);
-      break;
-    }
-    case Like.integer: {
-      matched = isInteger(value);
-      break;
-    }
-    case Like.boolean: {
-      matched = (value === true || value === false);
-      break;
-    }
-    case Like.null: {
-      matched = (value === null);
-      break;
-    }
-    case Like.undefined: {
-      matched = (value === undefined);
-      break;
-    }
-    case Like.error: {
-      matched = likeError(value);
-      break;
-    }
-    case Like.promise: {
-      matched = likePromise(value);
-      break;
-    }
-    default: {
-      /* istanbul ignore next */
-      throw new Error(`"${type}" is not a supported matcher type.`);
-    }
-  }
-  if (matched) {
-    return {
-      pass: true,
-      message: () => `Expected '${value}' not to be be of type '${type}'`
-    };
+/**
+ * Extend Jest with toBeLike.
+ * Automatically called.
+ */
+const extendJest = () => {
+  const jestExpect = (() => { return expect; })();
+  if (jestExpect && jestExpect !== undefined) {
+    jestExpect.extend({ toBeLike });
   } else {
-    return {
-      pass: false,
-      message: () => `Expected '${value}' to be be of type '${type}'`
-    };
+    throw new Error(`Unable to find Jest expect.`);
   }
-}
+};
+extendJest();

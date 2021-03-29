@@ -1,4 +1,4 @@
-import { Like } from '../src/index.js';
+import { Like } from '../src/matchers.js';
 
 test('Like should be an object', () => {
   expect(Like).toBeInstanceOf(Object);

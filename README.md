@@ -36,6 +36,19 @@ expect('test').toBeLike('string');
 expect(100).toBeLike('integer');
 ```
 
+## Setup
+Add to the Jest configuration.
+```
+  setupFilesAfterEnv: [
+    '@theroyalwhee0/tobelike'
+  ],
+```
+
+Add to global.d.ts for TypeScript
+```
+import '@theroyalwhee0/tobelike';
+```
+
 
 ## Testing.
 Running ```npm run test``` will run the test suite. Running ```npm run test-watch``` will run the test suite in watch mode.
@@ -51,7 +64,11 @@ Running ```npm run test``` will run the test suite. Running ```npm run test-watc
 
 
 ## History
-- v0.0.1
+- v0.0.2 - 2021-03-28
+  - Add automatic extend Jest.
+  - Fix extending Jest type.
+  - Improve documentation.
+- v0.0.1 - 2021-03-28
   - Initial release.
 
 

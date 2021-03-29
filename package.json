@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "toBeLike matcher for Jest",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "types/index.d.ts",
   "author": "Adam Mill <hismajesty@theroyalwhee.com>",
   "license": "Apache-2.0",
   "keywords": [
@@ -32,7 +32,7 @@
     "@theroyalwhee0/liketype": "0.0.1"
   },
   "scripts": {
-    "build": "tsc && mkdir -p ./dist && cp ./build/src/* ./dist/",
+    "build": "tsc && mkdir -p ./dist && cp ./build/src/*.js ./build/src/*.map ./dist/",
     "test": "tsc && jest",
     "lint": "eslint src/ test/",
     "test-watch": "npm run build && concurrently 'tsc --watch' 'jest --watchAll'",

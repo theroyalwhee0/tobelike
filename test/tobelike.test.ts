@@ -1,4 +1,4 @@
-import { Like, toBeLike } from '../src/index.js';
+import { Like, toBeLike } from '../src/matchers.js';
 
 test('toBeLike should be a function', () => {
   expect(toBeLike).toBeInstanceOf(Function);
