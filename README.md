@@ -3,11 +3,11 @@ toBeLike matcher for Jest.
 
 
 ## Installation
-npm install @theroyalwhee0/tobelike
+`npm install @theroyalwhee0/tobelike`
 
 *or*
 
-yarn add @theroyalwhee0/tobelike
+`yarn add @theroyalwhee0/tobelike`
 
 
 ## Documentation
@@ -51,7 +51,7 @@ import '@theroyalwhee0/tobelike';
 
 
 ## Testing.
-Running ```npm run test``` will run the test suite. Running ```npm run test-watch``` will run the test suite in watch mode.
+Running `npm run test` will run the test suite. Running `npm run test-watch` will run the test suite in watch mode.
 
 
 ## Reference
@@ -64,6 +64,8 @@ Running ```npm run test``` will run the test suite. Running ```npm run test-watc
 
 
 ## History
+- v1.0.0 - 2022-06-02
+  - Bump depends for security.
 - v0.0.2 - 2021-03-28
   - Add automatic extend Jest.
   - Fix extending Jest type.
@@ -73,6 +75,6 @@ Running ```npm run test``` will run the test suite. Running ```npm run test-watc
 
 
 ## Legal & License
-Copyright 2021 Adam Mill
+Copyright 2021-2022 Adam Mill
 
 This library is released under Apache 2 license. See [LICENSE](https://github.com/theroyalwhee0/tobelike/blob/master/LICENSE) for more details.
