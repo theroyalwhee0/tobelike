@@ -29,7 +29,7 @@
     "typescript": "4.7.2"
   },
   "dependencies": {
-    "@theroyalwhee0/liketype": "0.0.1"
+    "@theroyalwhee0/liketype": "1.0.0"
   },
   "scripts": {
     "build": "tsc && mkdir -p ./dist && cp ./build/src/*.js ./build/src/*.map ./dist/",
