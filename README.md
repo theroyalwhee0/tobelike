@@ -64,6 +64,8 @@ Running `npm run test` will run the test suite. Running `npm run test-watch` wil
 
 
 ## History
+- v1.0.1 - 2022-06-04
+  - Bump version on @theroyalwhee0/liketype.
 - v1.0.0 - 2022-06-02
   - Bump depends for security.
 - v0.0.2 - 2021-03-28

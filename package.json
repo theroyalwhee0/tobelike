@@ -1,6 +1,6 @@
 {
   "name": "@theroyalwhee0/tobelike",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "toBeLike matcher for Jest",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
